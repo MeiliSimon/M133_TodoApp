@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+  </head>
+  <body>
+    <form>
+        <input type="text" id="newTodo" placeholder="Todo eingeben">
+        <input type="button" id="addTodo" onclick="createTodo()">
+    </form>
+    <script>
+        let todos= new Array(42);
+        function createTodo(){
+           todos.push(document.getElementById("newTodo").value);
+           document.write(`<ul id="allTodos">`);
+            todos.forEach(todo => {
+                document.write(`<li><input id="${todo}"type="checkbox">${todo}</li>`)
+            });
+            document.write("</ul>");
+        }
+
+    </script>
+    <ul id="allTodos">
+    </ul>
+  </body>
+</html>
